@@ -5,14 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Monkey",
-            "type": "go",
-            "request": "attach",
-            "mode": "local",
-            "processId": "monkey",
-        },
-        {
-            "name": "Launch Package",
+            "name": "Start Adventure",
             "type": "go",
             "request": "launch",
             "mode": "debug",
@@ -22,6 +15,13 @@
             "serverReadyAction": {
                 "action": "openExternally",             
             },
-        }
+        },
+        {
+            "name": "Monkey",
+            "type": "go",
+            "request": "attach",
+            "mode": "local",
+            "processId": "monkey",
+        },
     ]
 }
