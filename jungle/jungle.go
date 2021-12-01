@@ -4,6 +4,6 @@ import (
 	"context"
 )
 
-func Jungle(ctx context.Context) {
+func Jungle(_ context.Context) {
 	Guardian()
 }

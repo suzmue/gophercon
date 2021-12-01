@@ -7,8 +7,8 @@ import (
 
 const NUM_BUTTERFLIES = 10
 
-func watchButterflies(id int, x string) string {
-	return x
+func watchButterflies(id int, pattern string) string {
+	return pattern // ids are between [0,10)
 }
 
 func Garden(ctx context.Context) {

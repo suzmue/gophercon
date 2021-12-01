@@ -1,43 +1,45 @@
 package bar
 
+import "context"
+
 func startOfBar() {
 	GatherIntel()
 }
 
-func name1() {
-	hi := speak["name1"]
+func Alice() {
+	hi := speak["Alice"]
 	_ = hi
 	startOfBar()
 }
 
-func name2() {
-	hi := speak["name2"]
+func Bob() {
+	hi := speak["Bob"]
 	_ = hi
-	name1()
+	Alice()
 }
 
-func name3() {
-	hi := speak["name3"]
+func Carol() {
+	hi := speak["Carol"]
 	_ = hi
-	name2()
+	Bob()
 }
 
-func name4() {
-	hi := speak["name4"]
+func Dave() {
+	hi := speak["Dave"]
 	_ = hi
-	name3()
+	Carol()
 }
 
-func name5() {
-	hi := speak["name5"]
+func Eve() {
+	hi := speak["Eve"]
 	_ = hi
-	name4()
+	Dave()
 }
 
 func endOfBar() {
-	name5()
+	Eve()
 }
 
-func enterBar() {
+func Bar(_ context.Context) {
 	endOfBar()
 }

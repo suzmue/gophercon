@@ -1,14 +1,29 @@
 package jungle
 
 import (
+	"fmt"
 	"os"
 	"os/exec"
+	"path/filepath"
+	"runtime"
 )
 
 func Guardian() {
-	exec.Command("go", "build", "-o=/Users/suzmue/gophercon/monkey/monkey", "-gcflags=all=-N -l", "github.com/suzmue/gophercon21/monkey").Run()
-
-	cmd := exec.Command("/Users/suzmue/gophercon/monkey/monkey")
-	cmd.Stdout = os.Stdout
-	cmd.Run()
+	dir, err := os.MkdirTemp("", "treasureHunt")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer os.Remove(dir)
+	output := filepath.Join(dir, "monkey")
+	if runtime.GOOS == "windows" {
+		output += ".exe"
+	}
+	err = exec.Command("go", "build", fmt.Sprintf("-o=%s", output), "-gcflags=all=-N -l", "gophercon/jungle/monkey").Run()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer os.Remove(output)
+	exec.Command(output).Run()
 }
