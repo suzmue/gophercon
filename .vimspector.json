@@ -1,0 +1,33 @@
+{
+  "adapters": {
+    "dlv-dap": {
+      "variables": {
+        "port": "${unusedLocalPort}"
+      },
+      "command": [
+        "dlv",
+        "dap",
+        "--listen",
+        "127.0.0.1:${port}"
+      ],
+      "port": "${port}"
+    }
+  },
+  "configurations": {
+    "run-dap": {
+      "adapter": "dlv-dap",
+      "default": true,
+      "variables": {
+        "Dir": {
+          "shell": ["dirname", "${relativeFile}"]
+        }
+      },
+      "configuration": {
+        "request": "launch",
+        "mode": "debug",
+        "program": "./${Dir}",
+	"cwd": "./${Dir}"
+      }
+    }
+  }
+}
