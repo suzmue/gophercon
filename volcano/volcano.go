@@ -1,11 +1,10 @@
 package volcano
 
 import (
-	"context"
 	"runtime"
 )
 
-func Volcano(ctx context.Context) {
+func Volcano() {
 	// This is a dead end.
 	runtime.Breakpoint()
 }

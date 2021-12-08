@@ -1,11 +1,10 @@
 package cliffs
 
 import (
-	"context"
 	"runtime"
 )
 
-func Cliffs(ctx context.Context) {
+func Cliffs() {
 	// This is a dead end.
 	runtime.Breakpoint()
 }

@@ -66,23 +66,23 @@ func run(title string) {
 	ctx, cancel = context.WithCancel(context.Background())
 	switch title {
 	case "bar":
-		bar.Bar(ctx)
+		bar.Bar()
 	case "beach":
-		beach.Beach(ctx)
+		beach.Beach()
 	case "capitol":
-		capitol.Capitol(ctx)
+		capitol.Capitol()
 	case "cliffs":
-		cliffs.Cliffs(ctx)
+		cliffs.Cliffs()
 	case "gym":
-		gym.Gym(ctx)
+		gym.Gym()
 	case "garden":
 		garden.Garden(ctx)
 	case "jungle":
-		jungle.Jungle(ctx)
+		jungle.Jungle()
 	case "port":
-		port.Port(ctx)
+		port.Port()
 	case "volcano":
-		volcano.Volcano(ctx)
+		volcano.Volcano()
 	}
 }
 

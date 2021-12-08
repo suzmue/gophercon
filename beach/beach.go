@@ -1,11 +1,10 @@
 package beach
 
 import (
-	"context"
 	"runtime"
 )
 
-func Beach(_ context.Context) {
+func Beach() {
 	runtime.Breakpoint()
 	searchBeach()
 }

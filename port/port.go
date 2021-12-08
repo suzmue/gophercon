@@ -1,11 +1,10 @@
 package port
 
 import (
-	"context"
 	"runtime"
 )
 
-func Port(ctx context.Context) {
+func Port() {
 	// This is a dead end.
 	runtime.Breakpoint()
 }

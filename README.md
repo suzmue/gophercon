@@ -8,6 +8,7 @@ Download this repository and open it with VS Code to follow along.
 $ git clone https://github.com/suzmue/gophercon.git
 $ code gophercon
 ```
+![Map of GopherCon Island](static/images/map.png)
 
 ## Treasure hunting in other editors
 

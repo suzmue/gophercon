@@ -1,7 +1,5 @@
 package bar
 
-import "context"
-
 func startOfBar() {
 	GatherIntel()
 }
@@ -40,6 +38,6 @@ func endOfBar() {
 	Eve()
 }
 
-func Bar(_ context.Context) {
+func Bar() {
 	endOfBar()
 }
