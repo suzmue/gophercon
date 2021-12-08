@@ -2,7 +2,6 @@ package garden
 
 import (
 	"context"
-	"fmt"
 	"runtime"
 	"strings"
 )
@@ -58,14 +57,10 @@ var palmTree = "###########################'`################################\n"
 	"\n" +
 	"                                                        GNN94\n"
 
-var route = getPineapple()
+var route = getPalmTree()
 
-func getPineapple() []string {
+func getPalmTree() []string {
 	return strings.Split(palmTree, "\n")
-}
-
-func unlockDoor(passcode string) bool {
-	return passcode == "palm tree"
 }
 
 func flap(i int) string {
@@ -74,17 +69,6 @@ func flap(i int) string {
 	}
 	x := route[i%len(route)]
 	return x
-}
-
-var quit = make(chan bool)
-
-func openDoor() {
-	defer func() {
-		for i := 0; i < NUM_BUTTERFLIES; i++ {
-			quit <- true
-		}
-	}()
-	fmt.Println("A map of the island! There's an X on the beach under the pier. (Go to the beach and set a breakpoint on beach.Pier to find the spot to dig.")
 }
 
 func butterflies(ctx context.Context) {
